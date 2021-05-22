@@ -13,6 +13,8 @@ class App {
   }
 
   middlewares() {
+    this.server.use(express.static('public'))
+
     this.server.use(express.json())
   }
 
