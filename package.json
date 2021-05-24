@@ -7,7 +7,8 @@
     "build": "tsc --project ./",
     "start": "node dist/server.js",
     "start:dev": "nodemon src/server.ts",
-    "start:prod": "node dist/server.js"
+    "start:prod": "node dist/server.js",
+    "ng": "ng"
   },
   "dependencies": {
     "axios": "^0.21.1",
