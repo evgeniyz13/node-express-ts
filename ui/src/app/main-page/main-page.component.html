@@ -1,0 +1,61 @@
+<!-- Navigation bar -->
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <div class="pull-left">
+      <a class="navbar-toggle" routerLink="/recent-jobs" data-toggle="offcanvas"
+        ><i class="ti-menu"></i
+      ></a>
+
+      <div class="logo-wrapper">
+        <a class="logo"><img src="assets/img/logo.png" alt="logo" /></a>
+      </div>
+    </div>
+    <!-- END Logo -->
+
+    <!-- User account -->
+    <div class="pull-right user-login">
+      <a class="btn btn-sm btn-primary" routerLink="/recent-jobs">Увійти</a> або
+      <a routerLink="/recent-jobs">зареєструватись</a>
+    </div>
+    <!-- END User account -->
+  </div>
+</nav>
+<!-- Main search -->
+<div
+  class="site-header size-lg text-center"
+  style="background-image: url(assets/img/bg-banner1.jpg)"
+>
+  <div class="container">
+    <div class="col-xs-12">
+      <br /><br />
+      <h2>Ми пропонуємо <mark>безліч</mark> вакарсій роботи!</h2>
+      <h5 class="font-alt">Знайти свою мрію прямо зараз</h5>
+      <br /><br /><br />
+      <form class="header-job-search">
+        <div class="input-keyword">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Назва, навики, або компанія"
+          />
+        </div>
+
+        <div class="input-location">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Місто, область"
+          />
+        </div>
+
+        <div class="btn-search">
+          <button class="btn btn-primary" type="submit" routerLink="/job-list">
+            Знайти вакансії
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- END Main search -->
