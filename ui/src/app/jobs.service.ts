@@ -1,12 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Job } from './interfaces';
-import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class JobsService {
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl = '';
   public input: string = '';
   public jobs: Job[] = [];
 
