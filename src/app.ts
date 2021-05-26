@@ -14,7 +14,7 @@ class App {
   }
 
   middlewares() {
-    this.server.use(express.static('public'))
+    this.server.use(express.static('ui/dist/ui'))
     this.server.use(cors())
 
     this.server.use(express.json())
