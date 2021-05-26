@@ -1,4 +1,24 @@
-<!-- END Navigation bar -->
-<app-main-page></app-main-page>
+<!-- Navigation bar -->
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo -->
+    <div class="pull-left">
+      <a class="navbar-toggle" routerLink="/recent-jobs" data-toggle="offcanvas"
+        ><i class="ti-menu"></i
+      ></a>
+
+      <div class="logo-wrapper">
+        <a class="logo"><img src="assets/img/logo.png" alt="logo" /></a>
+      </div>
+    </div>
+    <!-- END Logo -->
+
+    <!-- User account -->
+    <div class="pull-right user-login">
+      <a class="btn btn-sm btn-primary" routerLink="/recent-jobs">Увійти</a> або
+      <a routerLink="/recent-jobs">зареєструватись</a>
+    </div>
+    <!-- END User account -->
+  </div>
+</nav>
 <router-outlet></router-outlet>
-<!-- <app-job-list></app-job-list>  -->

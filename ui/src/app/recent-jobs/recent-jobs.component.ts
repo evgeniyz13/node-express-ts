@@ -8,17 +8,13 @@ import { JobsService } from '../jobs.service';
   styleUrls: [],
 })
 export class RecentJobsComponent implements OnInit {
-  public jobs: Job[] = [];
-
-  constructor(private jobsService: JobsService) {}
+  constructor(public jobsService: JobsService) {}
 
   ngOnInit(): void {
     this.getRecentJobs();
   }
 
   getRecentJobs() {
-    this.jobsService.getAllJobs().subscribe((jobs: Job[]) => {
-      this.jobs = jobs.slice(0, 3);
-    });
+    this.jobsService.getRecentJobs();
   }
 }

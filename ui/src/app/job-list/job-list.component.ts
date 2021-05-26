@@ -8,18 +8,13 @@ import { JobsService } from '../jobs.service';
   styleUrls: [],
 })
 export class JobListComponent implements OnInit {
-  public jobs: Job[] = [];
-
-  constructor(private jobsService: JobsService) {}
+  constructor(public jobsService: JobsService) {}
 
   ngOnInit(): void {
     this.getAllJobs();
   }
 
   getAllJobs() {
-    this.jobsService.getAllJobs().subscribe((jobs: Job[]) => {
-      console.log(jobs);
-      this.jobs = jobs;
-    });
+    this.jobsService.getAllJobs();
   }
 }

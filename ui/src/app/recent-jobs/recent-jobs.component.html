@@ -6,7 +6,7 @@
     </header>
 
     <div class="row item-blocks-connected">
-      <div *ngFor="let job of jobs">
+      <div *ngFor="let job of jobsService.jobs">
         <div class="col-xs-12">
           <a class="item-block">
             <header>
@@ -42,64 +42,6 @@
           </a>
         </div>
       </div>
-      <!-- Job item -->
-      <!-- <div class="col-xs-12">
-        <a class="item-block" href="job-detail.html">
-          <header>
-            <img src="assets/img/lvumg.jpg" alt="" />
-            <div class="hgroup">
-              <h4>Senior поворачувальник кранів і гри в доміно</h4>
-              <h5>Диканське ЛВУМГ</h5>
-            </div>
-            <div class="header-meta">
-              <span class="location">Диканька, Полтавська обл</span>
-              <span class="label label-success">Повний робочий день</span>
-            </div>
-          </header>
-        </a>
-      </div> -->
-      <!-- END Job item -->
-
-      <!-- Job item -->
-      <!-- <div class="col-xs-12">
-        <a class="item-block" href="job-detail.html">
-          <header>
-            <img src="assets/img/res.jpeg" alt="" />
-            <div class="hgroup">
-              <h4>Team Lead Лазачів по стовпам і справляючих трансформатори</h4>
-              <h5>Диканська філія Полтава ОблЕнерго</h5>
-            </div>
-            <div class="header-meta">
-              <span class="location">Диканька, Полтавська обл</span>
-              <span class="label label-success">Повний робочий день</span>
-            </div>
-          </header>
-        </a>
-      </div> -->
-      <!-- END Job item -->
-
-      <!-- Job item -->
-      <!-- <div class="col-xs-12">
-        <a class="item-block" href="job-detail.html">
-          <header>
-            <img src="assets/img/svarka.jpeg" alt="" />
-            <div class="hgroup">
-              <h4>Middle Зварювальник всяких штук</h4>
-              <h5>Диканська фірма Варись Варись і більше не дерись</h5>
-            </div>
-            <div class="header-meta">
-              <span class="location">Диканька, Полтавська обл</span>
-              <span class="label label-success">Повний робочий день</span>
-            </div>
-          </header>
-        </a>
-      </div> -->
-      <!-- END Job item -->
     </div>
-
-    <br /><br />
-    <p class="text-center">
-      <a class="btn btn-info" routerLink="/job-list">Відкрити всі вакансії</a>
-    </p>
   </div>
 </section>

@@ -1,26 +1,3 @@
-<!-- Navigation bar -->
-<nav class="navbar">
-  <div class="container">
-    <!-- Logo -->
-    <div class="pull-left">
-      <a class="navbar-toggle" routerLink="/recent-jobs" data-toggle="offcanvas"
-        ><i class="ti-menu"></i
-      ></a>
-
-      <div class="logo-wrapper">
-        <a class="logo"><img src="assets/img/logo.png" alt="logo" /></a>
-      </div>
-    </div>
-    <!-- END Logo -->
-
-    <!-- User account -->
-    <div class="pull-right user-login">
-      <a class="btn btn-sm btn-primary" routerLink="/recent-jobs">Увійти</a> або
-      <a routerLink="/recent-jobs">зареєструватись</a>
-    </div>
-    <!-- END User account -->
-  </div>
-</nav>
 <!-- Main search -->
 <div
   class="site-header size-lg text-center"
@@ -35,6 +12,9 @@
       <form class="header-job-search">
         <div class="input-keyword">
           <input
+            #searchBox
+            id="search-box"
+            (input)="setSearchValue(searchBox.value)"
             type="text"
             class="form-control"
             placeholder="Назва, навики, або компанія"
@@ -50,7 +30,11 @@
         </div>
 
         <div class="btn-search">
-          <button class="btn btn-primary" type="submit" routerLink="/job-list">
+          <button
+            class="btn btn-primary"
+            type="submit"
+            (click)="submitSearch()"
+          >
             Знайти вакансії
           </button>
         </div>
@@ -59,3 +43,5 @@
   </div>
 </div>
 <!-- END Main search -->
+<app-recent-jobs *ngIf="isRecent"></app-recent-jobs>
+<app-job-list *ngIf="!isRecent"></app-job-list>
