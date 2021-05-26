@@ -6,19 +6,17 @@ import { AppComponent } from './app.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RecentJobsComponent } from './recent-jobs/recent-jobs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobListComponent,
     MainPageComponent,
-    RecentJobsComponent
+    RecentJobsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

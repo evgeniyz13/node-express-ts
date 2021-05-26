@@ -8,7 +8,7 @@ routes.get('/vacancy/search', async (req, res) => {
     params: req.query,
   })
 
-  return res.json(JSON.stringify(result.data, null, 2))
+  return res.json(result.data)
 })
 
 export default routes
