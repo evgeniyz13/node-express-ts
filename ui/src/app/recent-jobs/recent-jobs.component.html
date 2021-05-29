@@ -8,7 +8,7 @@
     <div class="row item-blocks-connected">
       <div *ngFor="let job of jobsService.jobs">
         <div class="col-xs-12">
-          <a class="item-block">
+          <a class="item-block" routerLink="/job-details/{{ job.id }}">
             <header>
               <div class="hgroup">
                 <h4>{{ job.name }}</h4>

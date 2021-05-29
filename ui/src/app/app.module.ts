@@ -8,6 +8,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { RecentJobsComponent } from './recent-jobs/recent-jobs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { JobDetailsComponent } from './job-details/job-details.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     JobListComponent,
     SearchPageComponent,
     RecentJobsComponent,
+    JobDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

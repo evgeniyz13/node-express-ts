@@ -19,6 +19,10 @@ export class SearchPageComponent implements OnInit {
     this.jobsService.saveSearchInput(input);
   }
 
+  setCityValue(input: string): void {
+    this.jobsService.setCityValue(input);
+  }
+
   submitSearch() {
     this.isRecent = false;
     this.jobsService.getAllJobs();

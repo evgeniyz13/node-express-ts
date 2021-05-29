@@ -23,9 +23,11 @@
 
         <div class="input-location">
           <input
+            #citySearchBox
             type="text"
             class="form-control"
-            placeholder="Місто, область"
+            placeholder="Місто"
+            (input)="setCityValue(citySearchBox.value)"
           />
         </div>
 

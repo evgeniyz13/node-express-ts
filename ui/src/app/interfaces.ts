@@ -31,3 +31,25 @@ export interface Job {
   salaryTo: string;
   shortDescription: string;
 }
+
+export interface JobDetails {
+  id: number;
+  name: string;
+  logo: string;
+  designBannerUrl: string;
+  designBannerFullUrl: string;
+  companyName: string;
+  date: string;
+  dateTxt: string;
+  salary: number;
+  salaryFrom: number;
+  salaryTo: number;
+  salaryComment: string;
+  description: string;
+  cityName: string;
+  vacancyAddress: string;
+  districtName: string;
+  metroName: string;
+  contactPhone: string;
+  contactURL: string;
+}

@@ -11,4 +11,12 @@ routes.get('/vacancy/search', async (req, res) => {
   return res.json(result.data)
 })
 
+routes.get('/vacancy', async (req, res) => {
+  const result = await axios.get('https://api.rabota.ua/vacancy', {
+    params: req.query,
+  })
+
+  return res.json(result.data)
+})
+
 export default routes
