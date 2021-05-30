@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import { getRepository } from './dbConnection'
 import { User } from './entity/User'
+import { JobDetails } from './entity/JobDetails'
+import { Job } from './entity/Job'
 
 const routes = Router()
 
@@ -42,6 +44,10 @@ routes.get('/vacancy/search', async (req, res) => {
     params: req.query,
   })
 
+  let jobRepository = await getRepository(Job)
+
+  jobRepository.save(result.data.documents)
+
   return res.json(result.data)
 })
 
@@ -49,6 +55,10 @@ routes.get('/vacancy', async (req, res) => {
   const result = await axios.get('https://api.rabota.ua/vacancy', {
     params: req.query,
   })
+
+  let jobDetailsRepository = await getRepository(JobDetails)
+
+  jobDetailsRepository.save(result.data)
 
   return res.json(result.data)
 })
