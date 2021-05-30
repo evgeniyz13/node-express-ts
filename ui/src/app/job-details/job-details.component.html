@@ -35,9 +35,9 @@
           <span>{{ job.cityName }}</span>
         </li>
 
-        <li>
-          <i class="fa fa-briefcase"></i>
-          <span>Повний робочий день</span>
+        <li *ngIf="job.metroName">
+          <i class="fa fa-certificate"></i>
+          <a>Mетро {{ job.metroName }}</a>
         </li>
 
         <li *ngIf="job.salary">
@@ -54,42 +54,7 @@
           <i class="fa fa-certificate"></i>
           <span>{{ job.contactPhone }}</span>
         </li>
-
-        <!-- <li>
-          <i class="fa fa-flask"></i>
-          <span>2+ years experience</span>
-        </li> -->
-
-        <li *ngIf="job.metroName">
-          <i class="fa fa-certificate"></i>
-          <a>Mетро {{ job.metroName }}</a>
-        </li>
       </ul>
-
-      <!-- <div class="button-group">
-        <ul class="social-icons">
-          <li class="title">Share on</li>
-          <li>
-            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-          </li>
-          <li>
-            <a class="google-plus" href="#"
-              ><i class="fa fa-google-plus"></i
-            ></a>
-          </li>
-          <li>
-            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-          </li>
-          <li>
-            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-          </li>
-        </ul>
-
-        <div class="action-buttons">
-          <a class="btn btn-primary" href="#">Apply with linkedin</a>
-          <a class="btn btn-success" href="#">Apply now</a>
-        </div>
-      </div> -->
     </div>
   </div>
 </header>
@@ -99,8 +64,10 @@
 <main>
   <!-- Job detail -->
   <section *ngIf="job">
-    <div class="container" [innerHtml]="job.description"></div>
-    <a class="btn btn-primary" routerLink="/">Назад</a>
+    <div class="container">
+      <div [innerHtml]="job.description"></div>
+      <a class="btn btn-primary" routerLink="/">Назад</a>
+    </div>
   </section>
 
   <!-- END Job detail -->
