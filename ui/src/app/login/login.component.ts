@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  toRegister() {
+    this.router.navigate(['/registration'], { skipLocationChange: true })
+  }
+
   onSubmit() {
     this.submitted = true
 
@@ -39,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.loginForm!.value).subscribe(
       (data) => {
         console.log(data)
-        this.router.navigate(['/'])
+        this.router.navigate(['/'], { skipLocationChange: true })
       },
       (error) => {
         console.error(error)

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Job } from '../interfaces';
-import { JobsService } from '../jobs.service';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { JobsService } from '../jobs.service'
 
 @Component({
   selector: 'app-recent-jobs',
@@ -8,13 +8,19 @@ import { JobsService } from '../jobs.service';
   styleUrls: [],
 })
 export class RecentJobsComponent implements OnInit {
-  constructor(public jobsService: JobsService) {}
+  constructor(public jobsService: JobsService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getRecentJobs();
+    this.getRecentJobs()
+  }
+
+  toJobDetails(id: string) {
+    this.router.navigate([`/job-details/${id}`], {
+      skipLocationChange: true,
+    })
   }
 
   getRecentJobs() {
-    this.jobsService.getRecentJobs();
+    this.jobsService.getRecentJobs()
   }
 }

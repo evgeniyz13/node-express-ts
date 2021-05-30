@@ -13,7 +13,7 @@
       <!-- Job item -->
       <div *ngFor="let job of jobsService.jobs">
         <div class="col-xs-12">
-          <a class="item-block" routerLink="/job-details/{{ job.id }}">
+          <a class="item-block" (click)="toJobDetails(job.id)">
             <header>
               <div class="hgroup">
                 <h4>{{ job.name }}</h4>

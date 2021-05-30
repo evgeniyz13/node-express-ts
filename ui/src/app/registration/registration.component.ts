@@ -30,6 +30,10 @@ export class RegistrationComponent implements OnInit {
     return this.registerForm.controls
   }
 
+  toLogin() {
+    this.router.navigate(['/login'], { skipLocationChange: true })
+  }
+
   onSubmit() {
     this.submitted = true
 
@@ -39,7 +43,7 @@ export class RegistrationComponent implements OnInit {
 
     this.userService.register(this.registerForm!.value).subscribe((data) => {
       console.log(data)
-      this.router.navigate(['/login'])
+      this.toLogin()
     })
   }
 }
