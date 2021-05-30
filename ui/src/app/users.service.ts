@@ -9,8 +9,11 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   register(body: RegisterInput) {
-    console.log(body)
     return this.http.post<RegisterResponse>(`${this.baseUrl}/register`, body)
+  }
+
+  login(body: LoginInput) {
+    return this.http.post<LoginResponse>(`${this.baseUrl}/login`, body)
   }
 }
 
@@ -24,3 +27,10 @@ interface RegisterInput {
 interface RegisterResponse extends RegisterInput {
   is: string
 }
+
+interface LoginInput {
+  email: string
+  password: string
+}
+
+interface LoginResponse {}

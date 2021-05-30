@@ -21,7 +21,20 @@ routes.post('/register', async (req, res) => {
 })
 
 routes.post('/login', async (req, res) => {
-  return res.json({})
+  let userRepository = await getRepository(User)
+
+  const user = await userRepository.findOne({
+    email: req.body.email,
+    password: req.body.password,
+  })
+
+  console.log(user)
+
+  if (!user) {
+    res.status(400).send('Wrong credentials')
+  }
+
+  return res.json(user)
 })
 
 routes.get('/vacancy/search', async (req, res) => {
