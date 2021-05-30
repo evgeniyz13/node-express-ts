@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { JobDetails } from '../interfaces';
-import { JobsService } from '../jobs.service';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import { JobDetails } from '../interfaces'
+import { JobsService } from '../jobs.service'
 
 @Component({
   selector: 'app-job-details',
@@ -9,20 +9,30 @@ import { JobsService } from '../jobs.service';
   styleUrls: [],
 })
 export class JobDetailsComponent implements OnInit {
-  public job: JobDetails | undefined;
+  public job: JobDetails | undefined
 
-  constructor(private route: ActivatedRoute, public jobsService: JobsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    public jobsService: JobsService,
+    private router: Router
+  ) {}
 
   async ngOnInit(): Promise<void> {
-    const jobId: string = this.route.snapshot.paramMap.get('id')!;
+    const jobId: string = this.route.snapshot.paramMap.get('id')!
 
-    this.getJobDetails(jobId);
+    this.getJobDetails(jobId)
   }
 
   async getJobDetails(jobId: string) {
     this.jobsService.getJobDetails(jobId).subscribe((response: JobDetails) => {
-      console.log(response);
-      this.job = response;
-    });
+      console.log(response)
+      this.job = response
+    })
+  }
+
+  back() {
+    this.router.navigate([`/search`], {
+      skipLocationChange: true,
+    })
   }
 }

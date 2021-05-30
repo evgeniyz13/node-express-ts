@@ -66,7 +66,7 @@
   <section *ngIf="job">
     <div class="container">
       <div [innerHtml]="job.description"></div>
-      <a class="btn btn-primary" routerLink="/">Назад</a>
+      <a class="btn btn-primary" (click)="back()">Назад</a>
     </div>
   </section>
 
